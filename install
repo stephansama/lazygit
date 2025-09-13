@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+curl -o ./themes/mocha.yml https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes/mocha/red.yml
+curl -o ./themes/latte.yml https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes/latte/red.yml
