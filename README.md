@@ -6,6 +6,8 @@ configuration for [`lazygit`](https://github.com/jesseduffield/lazygit) git TUI 
 
 </div>
 
+![screenshot](https://raw.githubusercontent.com/stephansama/static/refs/heads/main/images/lazygit.png)
+
 ## References
 
 [`catppuccin`](https://github.com/catppuccin/lazygit)
