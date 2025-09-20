@@ -1,6 +1,6 @@
-# https://github.com/catppuccin/lazygit/blob/main/themes/mocha/red.yml
+
+# https://raw.githubusercontent.com/catppuccin/lazygit/refs/heads/main/themes/mocha/red.yml
 gui:
-  nerdFontsVersion: "3"
   theme:
     activeBorderColor:
       - '#f38ba8'
@@ -21,5 +21,7 @@ gui:
       - '#cdd6f4'
     searchingActiveBorderColor:
       - '#f9e2af'
+  
   authorColors:
     '*': '#b4befe'
+  
