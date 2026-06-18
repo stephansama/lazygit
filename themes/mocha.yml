@@ -6,23 +6,34 @@ gui:
       - bold
     inactiveBorderColor:
       - '#a6adc8'
+    searchingActiveBorderColor:
+      - '#f9e2af'
     optionsTextColor:
       - '#89b4fa'
     selectedLineBgColor:
       - '#313244'
-    cherryPickedCommitBgColor:
-      - '#45475a'
+    inactiveViewSelectedLineBgColor:
+      - '#6c7086'
     cherryPickedCommitFgColor:
       - '#f38ba8'
+    cherryPickedCommitBgColor:
+      - '#45475a'
+    markedBaseCommitFgColor:
+      - '#89b4fa'
+    markedBaseCommitBgColor:
+      - '#f9e2af'
     unstagedChangesColor:
       - '#f38ba8'
     defaultFgColor:
       - '#cdd6f4'
-    searchingActiveBorderColor:
-      - '#f9e2af'
   authorColors:
     '*': '#b4befe'
 customCommands:
+  - key: 'E'
+    description: 'Add empty commit'
+    context: 'commits'
+    command: 'git commit --allow-empty -m "empty commit"'
+    loadingText: 'Committing empty commit...'
   - key: "C"
     command: 'git commit -m "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}{{if eq .Form.Breaking `yes`}}!{{end}}: {{ .Form.Description }}"'
     description: "commit with commitizen"
@@ -84,4 +95,16 @@ customCommands:
       - type: "confirm"
         title: "Is the commit message correct?"
         body: "{{ .Form.Type }}{{if .Form.Scopes}}({{ .Form.Scopes }}){{end}}{{if eq .Form.Breaking `yes`}}!{{end}}: {{ .Form.Description }}"
-
+  - key: "M"
+    command: "git mergetool {{ .SelectedFile.Name }}"
+    context: "files"
+    loadingText: "opening git mergetool"
+    output: terminal
+  - key: "G"
+    command: "gh pr view -w {{.SelectedLocalBranch.Name}}"
+    context: "localBranches"
+    description: "Open Github PR in browser"
+  - key: "G"
+    command: "gh pr view -w"
+    context: "commits"
+    description: "Open Github PR in browser"
